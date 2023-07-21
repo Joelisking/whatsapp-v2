@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { auth, db } from '../firebase'
 import { useRouter } from 'next/router'
 import { Avatar, IconButton } from '@mui/material'
-import { AttachFile, InsertEmoticon, Mic, MoreVert } from '@mui/icons-material'
+import { AttachFile, InsertEmoticon, Mic, MoreVert, Send } from '@mui/icons-material'
 import { useCollection } from 'react-firebase-hooks/firestore'
 import Message from './Message'
 import { useRef, useState } from 'react'
@@ -125,6 +125,9 @@ function ChatScreen({ chat, messages }) {
 				<button hidden disabled={!input} type="submit" onClick={sendMessage}>
 					Send
 				</button>
+                <IconButton>
+                    <Send onClick={sendMessage} />
+                </IconButton>
 			</InputContainer>
 		</Container>
 	)
